@@ -2,5 +2,5 @@
 title = "Series"
 [menu.main]
   weight = 40
-  pre = '<i class="fas fa-fw fa-columns"></i>'
+  pre = '<i aria-hidden="true" class="fas fa-fw fa-columns"></i>'
 +++

@@ -30,7 +30,7 @@
 <div class="post-cc">
   {{- $iconsHTML := "" -}}
   {{- range $icons -}}
-    {{- $iconsHTML = printf `%s<i class="fab fa-fw fa-creative-commons%s"></i>` $iconsHTML .  -}}
+    {{- $iconsHTML = printf `%s<i aria-hidden="true" class="fab fa-fw fa-creative-commons%s"></i>` $iconsHTML .  -}}
   {{- end -}}
   {{- $license := printf `<a target="_blank" rel="license noopener noreferrer" href="%s.%s">%s%s</a>` $link (default "en" (index $langs .Lang)) $linkTitle $iconsHTML -}}
   {{- $license -}}

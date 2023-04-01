@@ -29,7 +29,7 @@
 {{- range $key, $user := .Site.Social -}}
   {{- if eq $key "email" -}}
     <a class="nav-link social-link" href="mailto:{{ $user }}" title="{{ title $key }}">
-      <i class="fas fa-fw fa-2x fa-envelope"></i>
+      <i aria-hidden="true" class="fas fa-fw fa-2x fa-envelope"></i>
     </a>
     {{- else if eq $key "medium" -}}
     {{- $url := urls.Parse $user -}}
@@ -37,7 +37,7 @@
       {{- $url = printf "https://medium.com/@%s" $user | urls.Parse -}}
     {{- end -}}
       <a class="nav-link social-link" target="_blank" href="{{ $url.String }}" title="Medium" rel="noopener noreferrer">
-        <i class="fab fa-fw fa-2x fa-medium-m"></i>
+        <i aria-hidden="true" class="fab fa-fw fa-2x fa-medium-m"></i>
       </a>
     {{- else if eq $key "odysee" -}}
     {{- $url := urls.Parse $user -}}
@@ -52,14 +52,14 @@
         {{- else -}}
       {{- with index $items $key -}}
         <a class="nav-link social-link" target="_blank" href="{{ printf .url $user }}" title="{{ default (title $key) .title }}" rel="noopener noreferrer">
-          <i class="fa-fw fa-2x {{ default ( printf "fab fa-%s" $key ) .icon }}"></i>
+          <i aria-hidden="true" class="fa-fw fa-2x {{ default ( printf "fab fa-%s" $key ) .icon }}"></i>
         </a>
     {{- end -}}
   {{- end -}}
 {{- end -}}
   {{- with .OutputFormats.Get "rss" -}}
     <a class="nav-link social-link" target="_blank" href="{{ .Permalink }}" title="RSS" rel="noopener noreferrer">
-      <i class="fas fa-fw fa-2x fa-rss"></i>
+      <i aria-hidden="true" class="fas fa-fw fa-2x fa-rss"></i>
     </a>
   {{- end -}}
 </nav>
