@@ -10,7 +10,7 @@ class Scroller {
     btn.setAttribute('role', 'button');
     btn.setAttribute('aria-label', 'Scroll to top');
     btn.className = 'btn-scroll-to-top';
-    btn.innerHTML = '<i class="fas fa-chevron-circle-up fa-2x"></i>';
+    btn.innerHTML = '<i aria-hidden="true" class="fas fa-chevron-circle-up fa-2x"></i>';
     window.document.body.append(btn);
     this.btn = btn;
   }

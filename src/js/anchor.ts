@@ -16,7 +16,7 @@ class AnchorLink {
         const a = document.createElement('a');
         a.setAttribute('href', `#${id}`);
         a.setAttribute('class', 'anchor');
-        a.innerHTML = '<i class="fas fa-link"></i>';
+        a.innerHTML = '<i aria-hidden="true" class="fas fa-link"></i>';
         anchor.appendChild(a);
       });
     });

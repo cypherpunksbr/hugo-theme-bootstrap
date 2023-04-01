@@ -1,7 +1,7 @@
 [[main]]
   name = "Support"
   identifier = "support"
-  pre = '<i class="fas fa-fw fa-chevron-circle-down"></i>'
+  pre = '<i aria-hidden="true" class="fas fa-fw fa-chevron-circle-down"></i>'
   weight = 100
 [[main]]
   name = "Repository"

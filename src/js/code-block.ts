@@ -71,7 +71,7 @@ class CodeBlock {
     btn.setAttribute('role', 'button');
     btn.setAttribute('aria-label', 'Copy Code');
     btn.className = 'action';
-    btn.innerHTML = '<i class="fas fa-copy"></i>';
+    btn.innerHTML = '<i aria-hidden="true" class="fas fa-copy"></i>';
     const self = this;
     btn.addEventListener('click', () => {
       const cloneCode = self.code.cloneNode(true) as HTMLElement;
@@ -91,7 +91,7 @@ class CodeBlock {
       btn.setAttribute('role', 'button');
       btn.setAttribute('aria-label', 'Line number toggler');
       btn.className = 'action active';
-      btn.innerHTML = '<i class="fas fa-list"></i>';
+      btn.innerHTML = '<i aria-hidden="true" class="fas fa-list"></i>';
       const self = this;
       btn.addEventListener('click', () => {
         const { classList } = self.code;
@@ -125,7 +125,7 @@ class CodeBlock {
     btn.setAttribute('role', 'button');
     btn.setAttribute('aria-label', 'Line wrap toggler');
     btn.className = 'action';
-    btn.innerHTML = '<i class="fas fa-code"></i>';
+    btn.innerHTML = '<i aria-hidden="true" class="fas fa-code"></i>';
     btn.addEventListener('click', () => {
       const { classList } = self.code;
       const className = 'white-space-pre-wrap';
@@ -148,7 +148,7 @@ class CodeBlock {
       btn.setAttribute('role', 'button');
       btn.setAttribute('aria-label', 'Code block expand toggler');
       btn.className = 'action';
-      btn.innerHTML = '<i class="fas fa-arrows-alt-v"></i>';
+      btn.innerHTML = '<i aria-hidden="true" class="fas fa-arrows-alt-v"></i>';
       btn.addEventListener('click', () => {
         const { style } = this.pre;
         if (style.maxHeight) {
