@@ -5779,7 +5779,7 @@ fieldset:disabled .btn {
 }
 
 [data-mode=light] {
-	--hbs-background: #f6f8fa;
+	--hbs-background: #f0f0f0;
 	--hbs-background-light: rgba(225, 225, 225, 0.3);
 	--hbs-primary-text-on-background: #000;
 	--hbs-surface: #fff;
@@ -7212,7 +7212,7 @@ table {
 	width: 300%;
 	left: -100%;
 	top: -110%;
-	opacity: 0.8;
+	opacity: .9;
 	position: fixed;
 	z-index: -1;
   }
