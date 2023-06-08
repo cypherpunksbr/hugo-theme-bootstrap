@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Share+Tech&display=swap");
 
 :root {
+	--hbs-black-full: #000;
 	--hbs-white-full: #fff;
 	--hbs-neon-pink: #e0287d;
 	--hbs-neon-blue: #1bc7fb;
@@ -1745,12 +1746,6 @@ textarea.form-control-lg {
 
 .form-check-input:active {
 	filter: brightness(90%)
-}
-
-.form-check-input:focus {
-	border-color: #86b7fe;
-	outline: 0;
-	box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25)
 }
 
 .form-check-input:checked {
@@ -6132,11 +6127,28 @@ pre code {
 	box-shadow: 0 0 0 .125rem var(--hbs-accent)
 }
 
-.form-check-input:checked,
-.form-check-input:focus {
+.no-btn-style {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+}
+
+.form-check-input{
+	background-color: var(--hbs-white-full);
+	border-color: var(--hbs-white-full);
+	cursor: pointer;
+}
+
+.form-check-input:checked{
 	background-color: var(--hbs-accent);
 	border-color: var(--hbs-accent);
-	box-shadow: var(--hbs-accent-light)
+}
+
+.form-check-input:focus{
+	outline: 2px auto var(--hbs-black-full);
 }
 
 img {

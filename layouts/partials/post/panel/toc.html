@@ -3,7 +3,7 @@
 {{- $toc := .TableOfContents -}}
 {{- $valid := and $toc (and (ne $toc "<nav id=\"TableOfContents\"></nav>") (gt .WordCount $wordCount)) -}}
 {{- if and $enable $valid -}}
-<a class="action" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
-  <i class="fas fa-fw fa-list-alt"></i>
-</a>
+<button class="no-btn-style action" tabindex="0" aria-label="Abrir tópicos do documento" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+  <i aria-hidden="true" class="fas fa-fw fa-list-alt"></i>
+</button>
 {{- end -}}
