@@ -23,13 +23,14 @@
   	--hbs-font-share-tech: "Share Tech", sans-serif;
 	--hbs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 	--hbs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-	--hbs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+	--hbs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(53, 51, 51, 0));
 	--hbs-body-font-family: var(--hbs-font-sans-serif);
 	--hbs-body-font-size: 1rem;
 	--hbs-body-font-weight: 400;
 	--hbs-body-line-height: 1.5;
 	--hbs-body-color: #dee2e6;
 	--hbs-body-bg: var(--hbs-primary-text-on-surface);
+	--hbs-noise-opacity: 0.5;
 }
 
 *,
@@ -5774,7 +5775,7 @@ fieldset:disabled .btn {
 }
 
 [data-mode=light] {
-	--hbs-background: #f6f8fa;
+	--hbs-background: #f0f0f0;
 	--hbs-background-light: rgba(225, 225, 225, 0.3);
 	--hbs-primary-text-on-background: #000;
 	--hbs-surface: #fff;
@@ -5786,7 +5787,9 @@ fieldset:disabled .btn {
 	--hbs-primary-text-on-navbar: #e1e1e1;
 	--hbs-accent-text-on-navbar: #e1e1e1;
 	--hbs-accent: var(--hbs-primary);
-	--hbs-accent-dark: var(--hbs-primary-dark)
+	--hbs-accent-dark: var(--hbs-primary-dark);
+	--hbs-background-noise: var(--hbs-background);
+	--hbs-noise-opacity: 0.9;
 }
 
 [data-mode=dark] {
@@ -5805,6 +5808,9 @@ fieldset:disabled .btn {
 	--hbs-accent-dark: var(--hbs-primary);
 	--hbs-body-color: #212529;
 	--hbs-body-bg: #e9ecef;
+	--hbs-background-noise: #0a0a0a;
+	--hbs-noise-opacity: 0.2;
+
 }
 
 #modeSwitcher {
@@ -6104,7 +6110,9 @@ pre code {
 
 .footer {
   	font-family: var(--hbs-font-share-tech-mono);
-	color: var(--hbs-primary-text-on-background)
+	color: var(--hbs-primary-text-on-background);
+	position: inherit;
+	margin-bottom: 0;
 }
 
 .footer .powered-by a {
@@ -7210,3 +7218,35 @@ table {
   }
   
 /* glitch-effect end*/
+/* noise */
+.bg {
+	height: 100vh;
+	background-color: var(--hbs-background-noise);
+  }
+  
+  .bg:after {
+	animation: grain 8s steps(10) infinite;
+	background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+	opacity: var(--hbs-noise-opacity);
+	content: "";
+	height: 300%;
+	width: 300%;
+	left: -100%;
+	top: -110%;
+	position: fixed;
+	z-index: -1;
+  }
+  
+  @keyframes grain {
+	0%, 100% { transform:translate(0, 0) }
+	10% { transform:translate(-5%, -10%) }
+	20% { transform:translate(-15%, 5%) }
+	30% { transform:translate(5%, -25%) }
+	40% { transform:translate(-5%, 25%) }
+	50% { transform:translate(-15%, 10%) }
+	60% { transform:translate(15%, 0%) }
+	70% { transform:translate(0%, 15%) }
+	80% { transform:translate(5%, 35%) }
+	90% { transform:translate(-10%, 10%) }
+  }
+/* noise end */
